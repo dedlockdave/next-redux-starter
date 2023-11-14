@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+  overflow-y: scroll;
+  height: 100vh;
+  /* add scroll snap type when scroll down  */
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Manrope;
+  line-height: 1.6;
+  font-size: 12;
+  color: #ffff;
+  height: 100vh;
+  background-color: #688BF6;
+}
+
+/* body {
+  padding: 0;
+  margin: 0;
+  font-family: Manrope;
+  line-height: 1.6;
+  font-size: 18px;
+  background-image: url("../public/images/bg.png");
+  color: #ffff;
+  height: 100vh;
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  /* text-decoration: underline; */
+  color: #83EB3A;
+  opacity: .72;
+
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* h1 {
+  font-size: 1.618em;
+} */
+
+h2 {
+  font-size: 1.4045em;
+}
+
+/* override for Nuka Carousel */
+.slider-list {
+  min-height: 50vh;
+  /* overflow: scroll;/ */
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("../public/fonts/Manrope.ttf");
+  /* font-style: normal;
+  font-weight: 400;
+  font-display: swap; */
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("../public/fonts/Manrope-Bold.ttf");
+  /* font-style: normal;
+  font-weight: 400;
+  font-display: swap; */
+}
+
+
+
+/* REACT TABS */
+/* .react-tabs {
+  -webkit-tap-highlight-color: transparent;
+} */
+
+.react-tabs__tab-list {
+  margin: 0 -.75rem 10px;
+  /* background-color:#322D2B; */
+  border-bottom: 1px solid #E0CFC4;
+  display: flex;
+}
+
+.react-tabs__tab {
+  /* display: inline-block; */
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid transparent;
+  border-bottom: none; */
+  /* bottom: -1px; */
+  /* position: relative; */
+  list-style: none;
+  padding: 12px 12px;
+  /* margin: 0 9px; */
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.react-tabs__tab--selected {
+  /* background: #3B3633; */
+  color: #fff;
+  /* border-radius: 8px 8px 0 0; */
+  font-weight: bold;
+  border-bottom: 1px solid #fff;
+}
+
+.react-tabs__tab--disabled {
+  color: #4344B0;
+  cursor: default;
+}
+
+/* .react-tabs__tab:focus {
+  box-shadow: 0 0 5px hsl(208, 99%, 50%);
+  border-color: hsl(208, 99%, 50%);
+  outline: none;
+}
+
+.react-tabs__tab:focus:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  left: -4px;
+  right: -4px;
+  bottom: -5px;
+  background: #fff;
+} */
+
+.react-tabs__tab-panel {
+  display: none;
+}
+
+.react-tabs__tab-panel--selected {
+  display: block;
+}
+
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-roller div {
+  animation: lds-roller 0.8s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #5D6079;
+  margin: -4px 0 0 -4px;
+}
+
+/* .lds-roller div:nth-child(odd):after {
+  background: #4E148C;
+} */
+
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
