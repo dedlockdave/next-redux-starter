@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { useScreenSize } from "../../utils/effects"
+import { useScreenSize } from "../../usecases/screen"
 import { validImageURL } from "../profileV2/util"
 
 export default function CircleImage({ size, imageURL, className }) {

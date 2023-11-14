@@ -1,5 +1,5 @@
 // import Image from "next/image"
-import { useScreenSize } from "../../utils/effects"
+import { useScreenSize } from "../../usecases/screen"
 import ImageUploading from "react-images-uploading"
 import { saveImage } from "../../services/imageService"
 import Image from "next/image"

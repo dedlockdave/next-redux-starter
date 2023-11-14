@@ -6,7 +6,7 @@ import { useSelector } from "react-redux"
 
 import { setIsMobileNavOpen } from "../../../state/viewSlice"
 import ProfileIcon from "../../login/ProfileIcon"
-import { useScreenSize } from "../../../utils/effects"
+import { useScreenSize } from "../../../usecases/screen"
 import NavMobile from "./MobileTopNav"
 
 export default function Nav() {

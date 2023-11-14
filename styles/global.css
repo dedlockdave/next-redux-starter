@@ -10,27 +10,24 @@ html {
   scroll-snap-type: y mandatory;
 }
 
+@font-face {
+  font-family: 'MartianMono';
+  src: url('../public/fonts/martian/MartianMono-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 body {
   padding: 0;
   margin: 0;
-  font-family: Manrope;
   line-height: 1.6;
-  font-size: 12;
-  color: #ffff;
+  font-size: 1.6rem;
+  color: black;
   height: 100vh;
-  background-color: #688BF6;
+  font-family: MartianMono;
+  background-color: #ffff;
 }
 
-/* body {
-  padding: 0;
-  margin: 0;
-  font-family: Manrope;
-  line-height: 1.6;
-  font-size: 18px;
-  background-image: url("../public/images/bg.png");
-  color: #ffff;
-  height: 100vh;
-} */
 
 * {
   box-sizing: border-box;
@@ -42,7 +39,6 @@ a {
 }
 
 a:hover {
-  /* text-decoration: underline; */
   color: #83EB3A;
   opacity: .72;
 
@@ -57,102 +53,9 @@ img {
   width: 0px;
 }
 
-/* h1 {
-  font-size: 1.618em;
-} */
 
 h2 {
   font-size: 1.4045em;
-}
-
-/* override for Nuka Carousel */
-.slider-list {
-  min-height: 50vh;
-  /* overflow: scroll;/ */
-}
-
-@font-face {
-  font-family: "Manrope";
-  src: url("../public/fonts/Manrope.ttf");
-  /* font-style: normal;
-  font-weight: 400;
-  font-display: swap; */
-}
-
-@font-face {
-  font-family: "Manrope";
-  src: url("../public/fonts/Manrope-Bold.ttf");
-  /* font-style: normal;
-  font-weight: 400;
-  font-display: swap; */
-}
-
-
-
-/* REACT TABS */
-/* .react-tabs {
-  -webkit-tap-highlight-color: transparent;
-} */
-
-.react-tabs__tab-list {
-  margin: 0 -.75rem 10px;
-  /* background-color:#322D2B; */
-  border-bottom: 1px solid #E0CFC4;
-  display: flex;
-}
-
-.react-tabs__tab {
-  /* display: inline-block; */
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* border: 1px solid transparent;
-  border-bottom: none; */
-  /* bottom: -1px; */
-  /* position: relative; */
-  list-style: none;
-  padding: 12px 12px;
-  /* margin: 0 9px; */
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.react-tabs__tab--selected {
-  /* background: #3B3633; */
-  color: #fff;
-  /* border-radius: 8px 8px 0 0; */
-  font-weight: bold;
-  border-bottom: 1px solid #fff;
-}
-
-.react-tabs__tab--disabled {
-  color: #4344B0;
-  cursor: default;
-}
-
-/* .react-tabs__tab:focus {
-  box-shadow: 0 0 5px hsl(208, 99%, 50%);
-  border-color: hsl(208, 99%, 50%);
-  outline: none;
-}
-
-.react-tabs__tab:focus:after {
-  content: "";
-  position: absolute;
-  height: 5px;
-  left: -4px;
-  right: -4px;
-  bottom: -5px;
-  background: #fff;
-} */
-
-.react-tabs__tab-panel {
-  display: none;
-}
-
-.react-tabs__tab-panel--selected {
-  display: block;
 }
 
 .lds-roller {
@@ -262,4 +165,8 @@ h2 {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.clip-path-diamond {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
