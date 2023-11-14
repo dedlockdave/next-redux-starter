@@ -11,7 +11,7 @@ export default function MainArea4({ children }) {
     // if (loadingBots) return <Loader text="Booting up Assistant 🤖" />
 
     return (
-        <div className="w-full px-4">
+        <div className="w-full md:px-32 xl:px-64">
             <div className="flex flex-wrap h-full w-full pt-4">{children}</div>
         </div>
     )

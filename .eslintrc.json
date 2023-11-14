@@ -8,7 +8,11 @@
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@next/next/recommended"
+        "plugin:@next/next/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+
+
 
     ],
     "overrides": [
@@ -20,13 +24,17 @@
     "plugins": [
         "react",
         "@typescript-eslint"
+        
     ],
     "rules": {
+        "no-extra-semi": "off",
         "semi":  [2, "never"],
         "react/prop-types": "off",
         "react/react-in-jsx-scope": "off",
         "react/jsx-no-target-blank": "off",
-        "no-unused-vars": "off"
+        "no-unused-vars": "off",
+        "import/no-unresolved": "error"
+
 
     }
 }

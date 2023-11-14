@@ -2,7 +2,7 @@ import "../styles/global.css"
 import { AppProps } from "next/app"
 /* eslint-disable no-undef */
 import { useRouter } from "next/router"
-import { store } from "../state/store"
+import { store } from "../store/store"
 
 import { SessionProvider } from "next-auth/react"
 import "react-toastify/dist/ReactToastify.css"

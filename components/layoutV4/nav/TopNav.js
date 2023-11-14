@@ -4,10 +4,12 @@ import Link from "next/link"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 
-import { setIsMobileNavOpen } from "../../../state/viewSlice"
-import ProfileIcon from "../../login/ProfileIcon"
+import { setIsMobileNavOpen } from "../../../store/viewSlice"
+import ProfileIcon from "../../user/ProfileIcon"
 import { useScreenSize } from "../../../usecases/screen"
 import NavMobile from "./MobileTopNav"
+import { SubnavSections } from "../Subnav"
+import { useRoutes } from "../../../usecases/routes"
 
 export default function Nav() {
     let screen = useScreenSize()
@@ -15,9 +17,9 @@ export default function Nav() {
     let dispatch = useDispatch()
     if (screen == "small" || screen == "super-small") {
         return (
-            <div className="flex justify-between items-center m-3">
+            <div className="flex justify-between items-center m-3 ">
                 <NavMobile>
-                    <p>we put something here later</p>
+                    <PDFSections />
                 </NavMobile>
                 <div className="flex justify-end space-x-3">
                     <div
@@ -33,21 +35,39 @@ export default function Nav() {
         )
     } else {
         return (
-            <div className="w-full h-full grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] items-center">
-                <Link href="/">
-                    <div className="pl-8 h-full flex items-center space-x-3 cursor-pointer">
+            <div className="text-sm px-8 h-full flex gap-8 items-center justify-between">
+                <div className="flex gap-8 items-center">
+                    <Link href="/">
                         <HomeBrandIcon />
-                    </div>
-                </Link>
-
-                <div />
-
-                <div className="pr-8 flex justify-end">
+                    </Link>
+                    <PDFSections />
+                </div>
+                <div>
                     <ProfileIcon />
                 </div>
             </div>
         )
     }
+}
+
+export function PDFSections() {
+    // let dispatch = useDispatch()
+    let { activeSection, toUpload, toDecks } = useRoutes()
+    function changePage(val) {
+        if (val == "Upload") {
+            toUpload()
+        } else if (val == "Decks") {
+            toDecks()
+        }
+    }
+    let viewItems = ["Decks", "Upload"]
+    return (
+        <SubnavSections
+            sections={viewItems}
+            selected={activeSection}
+            setSection={changePage}
+        />
+    )
 }
 
 export function HomeBrandIcon() {
@@ -57,10 +77,15 @@ export function HomeBrandIcon() {
     let app = ""
 
     return (
-        <>
-            <Image src={"/images/logo.png"} height={h} width={w} />
-            <span className="text-sm font-bold text-accent1 ml-2">My App</span>
-        </>
+        <div className="flex items-center">
+            <Image
+                alt="logo frfr"
+                src={"/images/logo.png"}
+                height={h}
+                width={w}
+            />
+            <span className="font-bold text-accent1 ml-2">Flashcard Maker</span>
+        </div>
     )
 }
 

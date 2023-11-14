@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
 import { useEffect } from "react"
 import { ToastContainer, toast } from "react-toastify"
-import { useAppSelector } from "../../state/hooks"
+import { useAppSelector } from "../../store/hooks"
 export default function NotificationProvider() {
     // const { toastMsg } = useSelector<RootState, HelperState>(
     //     (state) => state.helper

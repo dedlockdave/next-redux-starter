@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion"
 
 import { sideBarAnimation } from "../../../styles/animations"
 import { outsideTrigger } from "../../../usecases/screen"
-import { setIsMobileNavOpen } from "../../../state/viewSlice"
+import { setIsMobileNavOpen } from "../../../store/viewSlice"
 
 export default function NavMobile({ children }) {
     let dispatch = useDispatch()
@@ -32,11 +32,11 @@ export default function NavMobile({ children }) {
                 )}
             </AnimatePresence>
 
-            <button
+            <div
                 className="absolute left-6 top-3 w-8 h-10 text-neutral sticky z-50"
                 onClick={toggleMenu}
             >
-                <div className="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="block w-5 text-white absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     {isMobileNavOpen ? (
                         <span
                             aria-hidden="true"
@@ -71,7 +71,7 @@ export default function NavMobile({ children }) {
                         />
                     )}
                 </div>
-            </button>
+            </div>
         </div>
     )
 }

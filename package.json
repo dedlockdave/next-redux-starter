@@ -1,5 +1,5 @@
 {
-  "name": "habithub",
+  "name": "next-redux-starter",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,8 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
     "@fontsource/roboto": "^4.5.8",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
@@ -20,8 +18,10 @@
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
-    "eslint": "8.28.0",
-    "eslint-config-next": "13.0.4",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "eslint": "^8.53.0",
+    "eslint-config-next": "^14.0.2",
+    "eslint-plugin-import": "^2.29.0",
     "framer-motion": "^10.16.4",
     "next": "13.0.4",
     "next-auth": "^4.17.0",
@@ -37,5 +37,14 @@
   "devDependencies": {
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.19"
+  },
+  "jest": {
+    "testTimeout": 100000,
+    "setupFiles": [
+      "./__tests__/jestSetup.js"
+    ],
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
   }
 }
